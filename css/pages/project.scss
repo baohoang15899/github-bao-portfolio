@@ -1,0 +1,144 @@
+.project{
+    &__content{
+        @extend .about__content;
+        &-title{
+            @extend .about__content-title;
+        }
+        &-line{
+            @extend .about__content-line;
+        }
+        &-des{
+            text-align: center;
+            font-family: $fontRoboto;
+            @include fontStyle(18px,$black,normal);
+        }
+        &-git{
+            margin-top: 15px;
+            text-align: center;
+            font-family: $fontRoboto;
+            @include fontStyle(18px,$black,normal);
+        }
+        &-group{
+            transition: all ease-in-out 0.6s;
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            column-gap: 50px;
+            row-gap: 50px;
+            transform: translateY(100px);
+            visibility:hidden;
+            opacity: 0;
+            &.show{
+                transform: translateY(0);
+                visibility:visible;
+                opacity: 1;
+            }
+        }
+        &-detail{
+            transition: all ease-in-out 0.2s;
+            border: 1px solid rgb(209, 207, 207);
+            border-radius: 4px;
+            &:hover {
+                box-shadow: 0 0 3px 1px rgb(168, 168, 168);
+            }
+            .wrap{
+                padding: 20px;
+            }
+        }
+        &-detailName{
+            font-family: $fontMont;
+            text-transform: uppercase;
+            @include fontStyle(18px,$black,normal);
+            margin-top: 30px;
+        }
+        &-detailType{
+            font-family: $fontRoboto;
+            @include fontStyle(18px,$black,normal);
+            margin-top: 20px;
+        }
+        &-detailDes{
+            font-family: $fontRoboto;
+            @include fontStyle(18px,$black,normal);
+            margin-top: 20px;
+        }
+        &-detailBtn{
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            a{
+                background-color: $black;
+                padding: 10px 40px;
+                font-family: $fontRoboto;
+                @include fontStyle(20px,$white,normal);
+                transition: all ease-in-out 0.2s;
+                &:hover{
+                    background-color: rgb(95, 94, 94);
+                }
+            }
+        }
+    }
+    @include max-breakpoint(1256){
+        &__content{
+            &-detailName{
+                font-size: 14px;
+            }
+            &-detailType{
+                font-size: 14px;
+            }
+            &-detailDes{
+                font-size: 14px;
+            }
+            &-detailBtn{
+                a{
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+    @include max-breakpoint(862){
+        &__content{
+            &-group{
+                column-gap: initial;
+                grid-template-columns: 1fr;
+            }
+            &-detailName{
+                font-size: 16px;
+            }
+            &-detailType{
+                font-size: 16px;
+            }
+            &-detailDes{
+                font-size: 16px;
+            }
+            &-detailBtn{
+                a{
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+    @include max-breakpoint(500){
+        &__content{
+            &-detailName{
+                font-size: 14px;
+            }
+            &-detailType{
+                font-size: 14px;
+            }
+            &-detailDes{
+                font-size: 14px;
+            }
+            &-detailBtn{
+                a{
+                    font-size: 16px;
+                }
+            }
+            &-git{
+                font-size: 14px;
+            }
+            &-des{
+                font-size: 14px;
+            }
+        }
+    }
+}

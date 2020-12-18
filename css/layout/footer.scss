@@ -1,0 +1,18 @@
+.footer{
+    background-color: #3bb78f;
+    background-size: cover;
+    background-position: center;
+    background-image:  linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+    &__content{
+        padding-top: 126px;
+        padding-bottom: 126px;
+        p{
+            text-align: center;
+            font-family: $fontRoboto;
+            @include fontStyle(16px,$white,normal);
+            &:nth-child(1){
+                margin-bottom: 15px;
+            }
+        }
+    }
+}

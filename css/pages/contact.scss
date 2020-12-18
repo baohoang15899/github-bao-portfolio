@@ -1,0 +1,94 @@
+.contact{
+    @extend .skill;
+    &__content{
+        @extend .about__content;
+        &-title{
+            @extend .skill__content-title;
+        }
+        &-line{
+            @extend .skill__content-line;
+        }
+        .wrap{
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            transform: translateY(100px);
+            visibility:hidden;
+            opacity: 0;
+
+            transition: all ease-in-out 0.6s;
+            &.show{
+                transform: translateY(0);
+                visibility:visible;
+                opacity: 1;
+            }
+        }
+        &-group{
+            margin-top: 80px;
+            display: grid;
+            text-align: center;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 50px;
+            color: $white;
+            @include max-breakpoint(722){
+                row-gap: 50px;
+                column-gap: initial;
+                grid-template-columns: 1fr
+            }
+        }
+        &-description{
+            @extend .project__content-des;
+            color: $white;
+        }
+        &-phone{
+            i{
+                height: 80px;
+                font-size: 75px;
+            }
+            p{
+                margin-top: 20px;
+                font-family: $fontRoboto;
+                @include fontStyle(18px,$white,normal);
+            }
+            @include max-breakpoint(500){
+                i{
+                    font-size: 60px;
+                    height: 70px;
+                }
+            }
+        }
+        &-gmail{
+            i{
+                height: 80px;
+                font-size: 65px;
+            }
+            p{
+                margin-top: 20px;
+                font-family: $fontRoboto;
+                @include fontStyle(18px,$white,normal);
+            }
+            @include max-breakpoint(500){
+                i{
+                    font-size: 60px;
+                    height: 70px;
+                }
+            }
+        }
+        &-cv{
+            text-align: center;
+            margin-top: 80px;
+            a{
+                padding: 10px 50px;
+                background-color: $white;
+                color: $black;
+                font-family: $fontRoboto;
+                @include fontStyle(20px,$black,normal);
+                transition: all ease-in-out 0.2s;
+                &:hover{
+                    background-color: $black;
+                    color: $white;
+                }
+            }
+        }
+    }
+}

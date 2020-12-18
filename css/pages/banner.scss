@@ -1,0 +1,94 @@
+.banner{
+    background-color: #3bb78f;
+    background-image:  linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
+    &__content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding-top: 196px;
+        padding-bottom: 196px;
+        max-width: 750px;
+        transform: translateY(100px);
+        opacity: 0;
+        visibility: hidden;
+        transition: all ease-in-out 0.5s;
+        margin: auto;
+        &-decor{
+            margin-bottom: 30px;
+            @include fontStyle(55px,$white,normal);
+        }
+        &-title{
+            font-family: $fontMont;
+            font-weight: 400;
+            @include fontStyle(55px,$white,normal);
+        }
+        &-subTitle{
+            margin-top: 30px;
+            font-family: $fontRoboto;
+            @include fontStyle(22px,$white,normal);
+        }
+        &-btn{
+            font-family: $fontRoboto;
+            margin-top: 80px;
+            border-radius: 4px;
+            padding: 10px 35px;
+            outline: none;
+            background-color: transparent;
+            text-transform: uppercase;
+            @include fontStyle(16px,$white,normal);
+            border: 2px solid $white;
+            transition: 0.2s ease-in-out all;
+            &:hover{
+                background-color: $white;
+                border: 2px solid $black;
+                color: $black;
+            }
+        }
+        &.show{
+            transform: translateY(0px);
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+    @include max-breakpoint(1256){
+        &__content{
+            &-decor{
+                font-size: 45px;
+            }
+            &-title{
+                font-size: 45px;
+            }
+            &-subTitle{
+                font-size: 18px;
+            }
+        }
+    }
+    @include max-breakpoint(747){
+        &__content{
+            &-decor{
+                font-size: 35px;
+            }
+            &-title{
+                font-size: 35px;
+            }
+            &-subTitle{
+                font-size: 18px;
+            }
+        }
+    }
+    @include max-breakpoint(401){
+        &__content{
+            &-decor{
+                font-size: 30px;
+            }
+            &-title{
+                font-size: 25px;
+            }
+            &-subTitle{
+                font-size: 16px;
+            }
+        }
+    }
+}

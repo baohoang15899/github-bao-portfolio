@@ -1,0 +1,92 @@
+.header{
+    position: fixed;
+    max-width: 1920px;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 999;
+    transition: all ease-in-out 0.2s;
+    &__content{
+        padding: 18px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &-mobileBtn{
+            display: none;
+        }
+        &-menu{
+            display: flex;
+            align-items: center;
+        }
+        &-logo{
+            font-family: $fontMont;
+            font-weight: bold;
+            @include fontStyle(28px,$white,normal);
+        }
+        &-item{
+            color: $white;
+            &.show{
+                color: $yellow;
+            }
+        }
+        &-list{
+            @include fontStyle(15px,$white,normal);
+            text-transform: uppercase;
+            font-family: $fontMont;
+            &:nth-child(1){
+                margin-right: 30px;
+            }
+            &:nth-child(2){
+                margin-right: 30px;
+            }
+            &:nth-child(3){
+                margin-right: 30px;
+            }
+            a{
+                transition: 0.2s ease-in-out;
+            }
+            &:hover a{
+                color: $yellow
+            }
+        }
+    }
+    @include max-breakpoint(993){
+        background-color: $black;
+        &__content{
+            flex-wrap: wrap;
+            &-logo{
+                font-size: 24px;
+            }
+            &-mobileBtn{
+                cursor: pointer;
+                font-size: 14px;
+                display: block;
+                color: $white;
+                padding: 5px 8px;
+                border: 1px solid $white;
+                border-radius: 4px;
+            }
+            &-menu{
+                align-items: flex-start;
+                flex-direction: column;
+                flex-basis: 100%;
+                max-height: 0vh;
+                overflow: hidden;
+                transition: all ease-in-out 0.4s;
+                &.show{
+                    max-height: 100vh;
+                }
+            }
+            &-list{
+                padding-top: 10px;
+                padding-bottom: 10px;
+                margin-top: 25px;
+                margin-left: initial;
+            }
+        }
+    }
+    &.show{
+        background-color: $black;
+    }
+}

@@ -1,0 +1,113 @@
+.about{
+    background-color: $white;
+    &__content{
+        padding-top: 96px;
+        padding-bottom: 96px;
+        display: flex;
+        flex-direction: column;
+        &-title{
+            text-align: center;
+            font-family: $fontMont;
+            font-weight: 600;
+            text-transform: uppercase;
+            @include fontStyle (30px,$black,normal);
+        }
+        &-textInfo{
+            font-family: $fontRoboto;
+            @include fontStyle (16px,$black,normal);
+            line-height: 30px;
+        }
+        &-line{
+            background-color: rgb(68, 67, 67);
+            width: 64px;
+            height: 3px;
+            margin: 40px auto;
+        }
+        &-text{
+            .line{
+                background-color: rgb(207, 207, 207);
+                width: 100%;
+                height: 1px;
+                margin-top: 40px;
+                margin-bottom: 40px;
+            }
+        }
+        &-group{
+            margin-top: 80px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 50px;
+            transform: translateY(100px);
+            visibility:hidden;
+            transition: all ease-in-out 0.6s;
+            opacity: 0;
+            &.show{
+                transform: translateY(0);
+                visibility:visible;
+                opacity: 1;
+            }
+        }
+        &-titleGoal{
+            font-family: $fontMont;
+            @include fontStyle (20px,$black,normal);
+            text-transform: uppercase;
+            margin-top: 50px;
+        }
+        &-infoGoal{
+            font-family: $fontRoboto;
+            @include fontStyle (16px,$black,normal);
+            line-height: 30px;
+        }
+        &-textTitle{
+            font-family: $fontMont;
+            @include fontStyle (20px,$black,normal);
+            text-transform: uppercase;
+        }
+        &-img{
+            border-radius: 4px;
+            overflow: hidden;
+            &:hover img {
+                transform: scale(1.1);
+            }
+            img{
+                cursor: pointer;
+                transition: all ease-in-out 0.2s;
+                width: 100%;
+            }
+        }
+    }
+    @include max-breakpoint(1256){
+        &__content{
+            &-title{
+                font-size: 25px;
+            }
+            &-textInfo{
+                font-size: 14px;
+            }
+            &-infoGoal{
+                font-size: 14px;
+            }
+            &-textTitle{
+                font-size: 18px;
+            }
+            &-titleGoal{
+                font-size: 18px;
+            }
+        }
+    }
+    @include max-breakpoint(1021){
+        &__content{
+            &-group{
+                grid-template-columns: 1fr;
+                column-gap: initial;
+                row-gap: 50px;
+            }
+            &-textInfo{
+                font-size: 14px;
+            }
+            &-infoGoal{
+                font-size: 14px;
+            }
+        }
+    }
+}
