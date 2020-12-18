@@ -6,6 +6,9 @@
     background-size: cover;
     position: relative;
     z-index: 1;
+    @include max-breakpoint(1000){
+        background-attachment: initial;
+    }
     &::after{
         position: absolute;
         content:"";

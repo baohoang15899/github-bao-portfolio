@@ -328,6 +328,9 @@ button {
   background-size: cover;
   position: relative;
   z-index: 1; }
+  @media only screen and (max-width: 1000px) {
+    .skill, .contact {
+      background-attachment: initial; } }
   .skill::after, .contact::after {
     position: absolute;
     content: "";
