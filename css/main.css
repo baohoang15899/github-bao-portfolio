@@ -540,14 +540,8 @@ button {
 .contact__content .wrap {
   max-width: 900px;
   margin-left: auto;
-  margin-right: auto;
-  transform: translateY(100px);
-  visibility: hidden;
-  opacity: 0;
-  transition: all ease-in-out 0.6s; }
+  margin-right: auto; }
   .contact__content .wrap.show {
-    transform: translateY(0);
-    visibility: visible;
     opacity: 1; }
 .contact__content-group {
   margin-top: 80px;
